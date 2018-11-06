@@ -31,6 +31,24 @@
                         <finalName>app</finalName>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <version>1.4.8</version>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <contextDirectory>${project.basedir}</contextDirectory>
+                        <repository>${project.name}-service</repository>
+                        <tag>latest</tag>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
