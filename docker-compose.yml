@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  web_service:
+    image: web-service:latest
+    ports:
+      - "9090:8080"
+
+  non_web_service:
+    image: non-web-service:latest
+
+  break_service:
+    image: breaks-alot-service:latest
+    ports:
+      - "9091:8080"
+
+    depends_on:
+      - web_service
